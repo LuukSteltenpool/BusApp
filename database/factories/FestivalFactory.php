@@ -17,7 +17,7 @@ class FestivalFactory extends Factory
     public function definition()
     {
         // random aankomst en vertrek tijden
-        $start_time = Carbon::now()->addDays(rand(-60, 60)) // random dag vanaf nu +30 -30 dagen
+        $start_time = Carbon::now()->addDays(rand(-60, 60)) // random dag vanaf nu +60 -60 dagen
         ->addHours(rand(0, 23)); // Random hour between 0 and 23
         $end_time = $start_time->copy()->addHours(rand(1, 12)); // aankomst binnen 1 en 12 uur van vertrek
 

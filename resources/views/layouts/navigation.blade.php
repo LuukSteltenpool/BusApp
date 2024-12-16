@@ -1,6 +1,17 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!--header html gebeuren-->
+        <div class="list-group">
+            <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
+            <!-- Link to the festivals page -->
+            <a href="{{ route('festivals.index') }}" class="list-group-item list-group-item-action">Festivals</a>
+            <!-- Other links in your sidebar -->
+        </div>
+
+
+
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->

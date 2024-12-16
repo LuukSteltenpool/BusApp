@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FestivalController;
+
+Route::get('/festivals', [FestivalController::class, 'index'])->name('festivals.index');
+Route::get('/festivals/{festival}', [FestivalController::class, 'show'])->name('festivals.show');
 
 
 
