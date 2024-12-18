@@ -34,10 +34,12 @@ class BusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(bus $bus)
+    public function show($id)
     {
-        //
+        $bus = Bus::findOrFail($id);
+        return view('buses.show', compact('bus'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

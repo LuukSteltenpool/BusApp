@@ -1,8 +1,5 @@
-
 <x-app-layout>
-@extends('layouts.app')
 
-@section('content')
     <h1>Festival Details</h1>
     <p>
         Start Time: {{ $festival->Start_Time }}<br>
@@ -17,12 +14,14 @@
         <ul>
             @foreach ($festival->buses as $bus)
                 <li>
-                    Bus ID: {{ $bus->id }} | Leaves at: {{ $bus->Leaves_at }} | Arrives at: {{ $bus->Arrives_at }} | Ticket Price: ${{ $bus->ticket_price }}
+                    <a href="{{ route('buses.show', $bus->id) }}" class="text-blue-500 underline">
+                        Leaves at: {{ $bus->Leaves_at }} | Arrives at: {{ $bus->Arrives_at }} | Ticket Price: ${{ $bus->ticket_price }}
+                    </a>
                 </li>
             @endforeach
         </ul>
     @endif
+<br>
+    <a href="{{ route('festivals.index') }}" class="text-red-500 underline">Back to Festival List</a>
 
-    <a href="{{ route('festivals.index') }}">Back to Festival List</a>
-@endsection
 </x-app-layout>

@@ -2,13 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!--header html gebeuren-->
-        <div class="list-group">
-            <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
-            <!-- Link to the festivals page -->
-            <a href="{{ route('festivals.index') }}" class="list-group-item list-group-item-action">Festivals</a>
-            <!-- Other links in your sidebar -->
-        </div>
+
 
 
 
@@ -26,6 +20,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('festivals.index') }}" class="list-group-item list-group-item-action">Festivals </x-nav-link>
                 </div>
             </div>
 
@@ -80,6 +75,7 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+
             </x-responsive-nav-link>
         </div>
 
