@@ -19,7 +19,7 @@
 
         <!-- Button voor gratis ticket igv 100+ punten-->
         @if (Auth::check() && Auth::user()->points >= 100)
-            <button class="bg-gray-500 text-white px-4 py-2 mt-2 ms-3">
+            <button type="submit" class="bg-gray-500 text-white px-4 py-2 mt-2 ms-3">
                 You Have 100+ Points, claim your free ticket!
             </button>
         @endif

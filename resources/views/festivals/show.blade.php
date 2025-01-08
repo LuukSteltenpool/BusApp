@@ -7,16 +7,17 @@
         Available Buses: {{ $festival->buses->count() }}
     </p>
 
-    <h2 class="text-white">Buses</h2>
+    <h2 class="text-white">Buses:</h2>
     @if ($festival->buses->isEmpty())
         <p>No buses available for this festival.</p>
     @else
         <ul>
             @foreach ($festival->buses as $bus)
                 <li>
-                    <a href="{{ route('buses.show', $bus->id) }}" class="text-blue-500 underline">
-                        Leaves at: {{ $bus->Leaves_at }} | Arrives at: {{ $bus->Arrives_at }} | Ticket Price: ${{ $bus->ticket_price }}
+                    <a href="{{ route('buses.show', $bus->id) }}" class="bg-gray-500 text-white px-3 py-1 mt-2 ms-3">
+                        To bus
                     </a>
+                    <p class="text-blue-500"> Leaves at: {{ $bus->Leaves_at }} <br> Arrives at: {{ $bus->Arrives_at }} | Ticket Price: ${{ $bus->ticket_price }}</p>
                 </li>
             @endforeach
         </ul>
