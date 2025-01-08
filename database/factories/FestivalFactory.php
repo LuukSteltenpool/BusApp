@@ -36,7 +36,7 @@ class FestivalFactory extends Factory
             $buses = Bus::factory()->count($busCount ?? rand(1, 10))->create([
                 'festival_id' => $festival->id,
             ]);
-//1,15 is aantal bussen
+//1,10 is aantal bussen
             // Update the festival's available buses count
             $festival->update([
                 'Available_Buses' => $buses->count(),

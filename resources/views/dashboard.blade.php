@@ -23,6 +23,22 @@
                             {{ intval($progress) }}%
                         </div>
                     </div>
+                        <h3 class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">Your Ordered Tickets:</h3>
+                        @if ($ticketOrders->isEmpty())
+                            <p class="text-red-500">You have not ordered any tickets yet.</p>
+                        @else
+                            <ul class="space-y-4">
+                                @foreach ($ticketOrders as $order)
+                                    <li class="mt-4 bg-gray-100 p-4 border rounded text-black">
+                                        <p>Leaves At: {{ $order->bus->Leaves_at }}</p>
+                                        <p>Arrives At: {{ $order->bus->Arrives_at }}</p>
+                                        <p>Ammount of tickets: {{ $order->quantity }}</p>
+                                        <p>Total Price: ${{ $order->quantity * $order->bus->ticket_price }}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+
                 </div>
             </div>
         </div>
