@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-        Festival::factory(10)->withbuses()->create();// Adjust the count as needed
+        Festival::factory(10)->withbuses()->create();// festival
         Bus::factory()->count(20)->create();
 
 

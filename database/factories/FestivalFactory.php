@@ -32,12 +32,12 @@ class FestivalFactory extends Factory
     public function withbuses($busCount = null)
     {
         return $this->afterCreating(function ($festival) use ($busCount) {
-            // Create the related buses
+            // maak gerelateerde bussen
             $buses = Bus::factory()->count($busCount ?? rand(1, 10))->create([
                 'festival_id' => $festival->id,
             ]);
 //1,10 is aantal bussen
-            // Update the festival's available buses count
+            // update beschukbare bussen
             $festival->update([
                 'Available_Buses' => $buses->count(),
             ]);
